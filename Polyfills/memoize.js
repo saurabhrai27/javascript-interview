@@ -2,7 +2,7 @@
 function memoize (fn) {
     const cache = new Map();
     return (...args) => {
-        const argsToStrings = JSON.stringify(args);
+        const argsToStrings = fn.name + JSON.stringify(args);
         if(cache.has(argsToStrings)) {
             return cache.get(argsToStrings)
         } else {
